@@ -23,7 +23,6 @@
   <body>
 
     <div class="reveal">
-
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
@@ -64,8 +63,7 @@
           <p>
             Compteur
           </p>
-          <pre><code class="elm">
-type alias Model = Int
+          <pre><code class="elm">type alias Model = Int
 
 type Msg = Increment | Decrement
 
@@ -79,11 +77,28 @@ view : Model -> Html Msg
 view model =
   div [] [ button [ onClick Decrement ] [ text "-" ]
          , div [] [ text (toString model) ]
-         , button [ onClick Increment ] [ text "+" ] ]
-          </code></pre>
+         , button [ onClick Increment ] [ text "+" ] ]</code></pre>
         </section>
         <section>
-          <h2>Qu'est-ce que cela apporte ?</h2>
+          <h2>Compteur</h2>
+          <img src="img/counter.png" alt="counter" />
+        </section>
+        <section>
+          <h2>Apports</h2>
+          <ul>
+            <li>débogage à la compilation (types)</li>
+            <li>composabilité</li>
+            <li>maintenabilité</li>
+            <li>maîtrise des side-effects</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Apports</h2>
+          <p><q><strong>Redux</strong> evolves the ideas of <strong>Flux</strong>, but avoids its complexity by taking cues from <strong>Elm</strong>.
+</q></p>
+          <p style="float: right">
+            Documentation Redux.
+          </p>
         </section>
         <section>
           Parler de l'aspect graduel / compatibilité JS
@@ -97,30 +112,127 @@ view model =
         </section>
         <section>
           <h2>View</h2>
-          -> React
-          insister sur le côté fonctionel (description de la vue à partir de fonctions + virtual DOM)
-          donner quelques "bonnes pratiques" :
-          * dumb components
-          * top-down
-          * immutabilité -> optimisation du ré-rendu avec composants Pure
-          * story-book
+          <p>
+            En Elm :
+          </p>
+          <p><code>view : Model -> Html</code></p>
+          <pre class="fragment"><code class="elm">view model =
+  div [] [ button [ onClick Decrement ] [ text "-" ]
+         , div [] [ text (toString model) ]
+         , button [ onClick Increment ] [ text "+" ] ]</code></pre>
         </section>
         <section>
-          <h2>Model / Update</h2>
-          -> Redux
-          parler du typage
+          <h2>View</h2>
+          <p>
+            En Javascript : <span class="fragment">avec React :</span>
+          </p>
+          <pre class="fragment"><code class="jsx">class Counter extends Component {
+  render() {
+    return (
+      <div>
+        <button onClick={this.props.onDecrement}> - </button>
+        <p>{this.props.counter}</p>
+        <button onClick={this.props.onIncrement}> + </button>
+      </div>
+    );
+  }
+}</code></pre>
         </section>
         <section>
-          présenter la composition du pattern Elm
+          <h2>React</h2>
+          <p>
+            La vue devient une fonction :
+          </p>
+          <p>
+            <code>component : Props -> HTML</code><br />
+          </p>
+          <p class="fragment">
+            Virtual DOM avec diff pour optimiser le rendu :
+            <img src="img/react.png" alt="react" />
+          </p>
         </section>
         <section>
-          Communication avec le monde non-Flow
+          <h2>Bonnes pratiques</h2>
+          <p>
+            TODO
+          </p>
+          <ul>
+            <li>dumb components</li>
+            <li>top-down</li>
+            <li>immutabilité -> optimisation du ré-rendu avec composants Pure</li>
+            <li>story-book</li>
+          </ul>
         </section>
         <section>
-          Peu clair : effets, routage
+          <h2>Model</h2>
+          <p>
+            En Elm :
+          </p>
+          <pre class="fragment"><code class="elm">-- Counter
+type alias Model = Int
+</code></pre>
+          <pre class="fragment"><code class="elm">-- Car
+type alias Model =
+  { brand : String,
+    model : String,
+    km : Int
+  }
+</code></pre>
+        </section>
+        <section>
+          <h2>Model</h2>
+          <p>
+            En Javascript :
+          </p>
+          <p class="fragment">
+            Pas de typage :/.
+          </p>
+        </section>
+        <section>
+          <h2>Model</h2>
+          <p>
+            En JS + Flow :
+          </p>
+          <pre class="fragment"><code class="js">// Counter
+type Model = number;
+</code></pre>
+          <pre class="fragment"><code class="js">// Car
+type Model = {
+  brand: string,
+  model: string,
+  km: number
+};
+</code></pre>
+        </section>
+        <section>
+          TODO : expliquer Flow rapidement, donner capture d'écran de Nuclide, parler de TypeScript
+        </section>
+        <section>
+          <h2>Update</h2>
+          -> Redux ;
+          Montrer les types sommes ;
+          parler de l'écosystème Redux : montrer les logs ou Redux dev tools
+        </section>
+        <section>
+          <h2>Composition</h2>
+          <img src="img/elm-composition.jpg" alt="elm-composition" />
+        </section>
+        <section>
+          <h2>Composition</h2>
+          <p>
+            TODO
+          </p>
+        </section>
+        <section>
+          Communication avec le monde non-Flow ; Decode et API
+        </section>
+        <section>
+          Limitations : effets (pour l'instant Thunk), routage (pour l'instant React Router)
+        </section>
+        <section>
+          <h1>Merci.</h1>
         </section>
       </div>
-
     </div>
 
     <script src="lib/js/head.min.js"></script>
