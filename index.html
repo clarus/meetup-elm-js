@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/blood.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -36,13 +37,41 @@
           </p>
         </section>
         <section>
+          <h2>Une solution</h2>
           <p>
-            Une de nos solutions : s'inspirer de Elm
+            S'inspirer du langage Elm.
           </p>
+          <img src="img/elm.png" alt="elm-logo" style="border: 0; background: 0; box-shadow: 0 0 0;" />
         </section>
         <section>
           <h2>Qu'est-ce que Elm ?</h2>
-          language typé purement fonctionel + architecture Elm (model, update, view)
+          <p>Un language fonctionel typé qui compile vers Javascript :</p>
+          <pre><code class="elm">
+view model =
+  div []
+    [ button [ onClick Decrement ] [ text "-" ]
+    , div [] [ text (toString model) ]
+    , button [ onClick Increment ] [ text "+" ]
+    ]
+
+type Msg = Increment | Decrement
+
+update msg model =
+  case msg of
+    Increment ->
+      model + 1
+    Decrement ->
+      model - 1
+          </code></pre>
+        </section>
+        <section>
+          <h2>Compteur</h2>
+          <img src="img/counter.png" alt="counter" />
+        </section>
+        <section>
+          <h2>Qu'est-ce que Elm ?</h2>
+          <p>Une architecture :</p>
+          <img src="img/elm-architecture.png" alt="elm-architecture" style="max-height: 450px" />
         </section>
         <section>
           <h2>Qu'est-ce que cela apporte ?</h2>
@@ -102,7 +131,11 @@
         // Optional reveal.js plugins
         dependencies: [
           // Shim for `element.classList`.
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } }
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+          // Syntax highlight for <code> elements
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
         ]
       });
     </script>
