@@ -31,13 +31,15 @@
           <h4>Juin 2016 - Paris.js</h4>
         </section>
         <section>
-          <h2>...</h2>
-          <p>
-            État des lieux sur le site OuiCar -> problèmes
-          </p>
+          <h2>Frontend OuiCar</h2>
+          <ul>
+            <li>Environ 75.000 lignes de Javascript</li>
+            <li>Surtout du React / es6 mais encore du jQuery</li>
+            <li>Nombreux développeurs, certains partis</li>
+          </ul>
         </section>
         <section>
-          <h2>Une solution</h2>
+          <h2>Une des solutions</h2>
           <p>
             S'inspirer du langage Elm.
           </p>
@@ -45,33 +47,40 @@
         </section>
         <section>
           <h2>Qu'est-ce que Elm ?</h2>
-          <p>Un language fonctionel typé qui compile vers Javascript :</p>
-          <pre><code class="elm">
-view model =
-  div []
-    [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (toString model) ]
-    , button [ onClick Increment ] [ text "+" ]
-    ]
-
-type Msg = Increment | Decrement
-
-update msg model =
-  case msg of
-    Increment ->
-      model + 1
-    Decrement ->
-      model - 1
-          </code></pre>
-        </section>
-        <section>
-          <h2>Compteur</h2>
-          <img src="img/counter.png" alt="counter" />
+          <p>Un langage :</p>
+          <ul>
+            <li>purement fonctionel</li>
+            <li>typé</li>
+            <li>compile vers Javascript</li>
+          </ul>
         </section>
         <section>
           <h2>Qu'est-ce que Elm ?</h2>
           <p>Une architecture :</p>
           <img src="img/elm-architecture.png" alt="elm-architecture" style="max-height: 450px" />
+        </section>
+        <section>
+          <h2>Exemple</h2>
+          <p>
+            Compteur
+          </p>
+          <pre><code class="elm">
+type alias Model = Int
+
+type Msg = Increment | Decrement
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Increment -> model + 1
+    Decrement -> model - 1
+
+view : Model -> Html Msg
+view model =
+  div [] [ button [ onClick Decrement ] [ text "-" ]
+         , div [] [ text (toString model) ]
+         , button [ onClick Increment ] [ text "+" ] ]
+          </code></pre>
         </section>
         <section>
           <h2>Qu'est-ce que cela apporte ?</h2>
