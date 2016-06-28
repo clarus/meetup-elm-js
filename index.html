@@ -239,13 +239,39 @@ type Model = {
 </code></pre>
         </section>
         <section>
-          TODO : expliquer Flow rapidement, donner capture d'écran de Nuclide, parler de TypeScript
+          <h2>Typage avec Flow</h2>
+          <ul>
+            <li>Typage du javascript avec des annotations</li>
+            <li>Détection des erreurs à la compilation</li>
+            <li>Très bonne integration avec l'IDE Nuclide</li>
+            <li>ça reste du Javascipt au final</li>
+            <li>Typage graduel</li>
+          </ul>
         </section>
         <section>
-          <h2>Update</h2>
-          -> Redux ;
+          <h3>Update = (Action + Reducer)</h3>
+          <ul>
+            <li>Les Actions pour mettre à jour les données</li>
+            <li>Les Reducers pour appliquer les changements du model</li>
+            <li>Prédictibilité du code</li>
+            <li>Lisibilité et Débogage facilité</li>
+          </ul>
+          <br/>
+          <br/>
+          <i>TODO//
           Montrer les types sommes ;
-          parler de l'écosystème Redux : montrer les logs ou Redux dev tools
+          parler de l'écosystème Redux : montrer les logs ou Redux dev tools</i>
+
+        </section>
+        <section>
+          <h3>Comment garantir l'immutabilité ?</h3>
+
+          <ul>
+            <li>Object.freeze(obj) ? (ne gère pas plusieurs niveaux) </li>
+            <li>Immutable JS <a href="https://facebook.github.io/immutable-js/" target="_blank">proposé par Facebook</a></li>
+            <li>Eslint avec <a href="https://github.com/jhusain/eslint-plugin-immutable" target="_blank">eslint-plugin-immutable</a></li>
+          </ul>
+
         </section>
         <section>
           <h2>Composition</h2>
@@ -260,6 +286,35 @@ type Model = {
         <section>
           Communication avec le monde non-Flow ; Decode et API
         </section>
+        <section>
+          <h2>Les sides-effects</h2>
+
+          <q>
+ Anything where you are asking for some value and the answer may be different depending on what is going on in the world
+          </q>
+          <p style="float: right">
+            Documentation Elm.
+          </p>
+        </section>
+
+        <section>
+          <h3>En ELM</h3>
+          <ul>
+            <li>Commands (Chunk de données)</li>
+            <li>Tasks = Commands + ( Séquence, Chainage )</li>
+            <li>Subscriptions ( Click, WebSocket, Clavier ) </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>En Javascript</h3>
+          <ul>
+            <li>Promises</li>
+            <li>Redux Thunk Middleware</li>
+            <li>Redux SAGA</li>
+          </ul>
+        </section>
+
         <section>
           Limitations : effets (pour l'instant Thunk), routage (pour l'instant React Router)
         </section>
