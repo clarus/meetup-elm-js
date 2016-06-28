@@ -140,11 +140,20 @@ view model =
           <p>
             En Elm :
           </p>
-          <p><code>view : Model -> Html</code></p>
+          <p><code>view : Model -> Html Msg</code></p>
           <pre class="fragment"><code class="elm">view model =
   div [] [ button [ onClick Decrement ] [ text "-" ]
          , div [] [ text (toString model) ]
          , button [ onClick Increment ] [ text "+" ] ]</code></pre>
+        </section>
+        <section>
+          <h2>View</h2>
+          <p>
+            En Javascript : <span class="fragment">avec le DOM :</span>
+          </p>
+          <p class="fragment">
+            Objet avec mutations :/
+          </p>
         </section>
         <section>
           <h2>View</h2>
