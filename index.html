@@ -280,23 +280,28 @@ update msg model =
         <section>
           <h2>Update</h2>
           <p>
-            En Javascript :
+            En Javascript : Action + Reducer
+						<img src="img/action.png" alt="nuclide" class="fragment"/>
           </p>
         </section>
+				<section>
+					<h2>Update</h2>
+					<p>
+						En Javascript : Action + Reducer
+						<img src="img/reducer.png" alt="nuclide" class="fragment"/>
+					</p>
+				</section>
         <section>
-          <h3>Update = (Action + Reducer)</h3>
+          <h3>Les apports</h3>
           <ul>
-            <li>Les Actions pour mettre à jour les données</li>
-            <li>Les Reducers pour appliquer les changements du model</li>
             <li>Prédictibilité du code</li>
             <li>Lisibilité et Débogage facilité</li>
           </ul>
-          <br/>
-          <br/>
-          <i>TODO//
-          Montrer les types sommes ;
-          parler de l'écosystème Redux : montrer les logs ou Redux dev tools</i>
         </section>
+				<section>
+					<h3>Redux DevTools</h3>
+					<img src="img/redux-dev-tools.gif" alt="nuclide"/>
+				</section>
         <section>
           <h3>Comment garantir l'immutabilité ?</h3>
           <ul>
@@ -305,50 +310,21 @@ update msg model =
             <li>Eslint avec <a href="https://github.com/jhusain/eslint-plugin-immutable" target="_blank">eslint-plugin-immutable</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Composition</h2>
-          <img src="img/elm-composition.jpg" alt="elm-composition" />
-        </section>
-        <section>
-          <h2>Composition</h2>
-          <p>
-            TODO
-          </p>
-        </section>
-        <section>
-          Communication avec le monde non-Flow ; Decode et API
-        </section>
-        <section>
-          <h2>Les sides-effects</h2>
-
-          <q>
- Anything where you are asking for some value and the answer may be different depending on what is going on in the world
-          </q>
-          <p style="float: right">
-            Documentation Elm.
-          </p>
-        </section>
+				<section>
+					<h2>eslint-plugin-immutable</h2>
+					<p>
+						<img src="img/eslint.png" alt="nuclide"/>
+					</p>
+				</section>
 
         <section>
-          <h3>En ELM</h3>
-          <ul>
-            <li>Commands (Chunk de données)</li>
-            <li>Tasks = Commands + ( Séquence, Chainage )</li>
-            <li>Subscriptions ( Click, WebSocket, Clavier ) </li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>En Javascript</h3>
-          <ul>
-            <li>Promises</li>
-            <li>Redux Thunk Middleware</li>
-            <li>Redux SAGA</li>
-          </ul>
-        </section>
-
-        <section>
-          Limitations : effets (pour l'instant Thunk), routage (pour l'instant React Router)
+					<h3>Ce que nous devons encore explorer</h3>
+					<ul>
+						<li>Commands et Tasks ELM ou Promises</li>
+						<li>Redux Thunk Middleware ou Redux SAGA</li>
+						<li>Subscriptions ( Click, WebSocket, Clavier )</li>
+						<li>Communication avec le monde non-Flow Decode et API</li>
+					</ul>
         </section>
         <section>
           <h1>Merci.</h1>
