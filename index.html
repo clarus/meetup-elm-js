@@ -85,11 +85,7 @@ view model =
   div [] [ button [ onClick Decrement ] [ text "-" ]
          , div [] [ text (toString model) ]
          , button [ onClick Increment ] [ text "+" ] ]</code></pre>
-        </section>
-        <section>
-          <h2>Compteur</h2>
-          <img src="img/counter.png" alt="counter" />
-          <p>A quoi sert cette slide ?</p>
+         <a href="http://elm-lang.org/examples/buttons" target="_blank">Demo</a>
         </section>
         <section>
           <h2>Apports</h2>
@@ -108,7 +104,10 @@ view model =
           <img src="img/are-you-serious-giphy.gif" alt="seriously" />
         </section>
         <section>
-          <p>On a décidé de passer à REDUX</p>
+          <p>
+            On a décidé de passer à REDUX<br />
+            et son écosystème
+          </p>
           <img src="img/happy-giphy.gif" alt="happy" />
         </section>
         <section>
@@ -128,13 +127,13 @@ view model =
             <li>Le business aussi</li>
           </ul>
         </section>
-        <section>
+        <!-- <section>
           TODO:
           typage, compilation, Redux, React, fonctions pures, immutabilité, gestion des effets,
           communication avec JS standard, composabilité, sûreté / détection des erreurs, testabilité / story book,
           types sommes, top-down
           Défis restants : routing, effets
-        </section>
+        </section> -->
         <section>
           <h2>View</h2>
           <p>
@@ -186,6 +185,15 @@ view model =
           </p>
         </section>
         <section>
+          <h2>Composition</h2>
+          <img src="img/react-composition.png" alt="react-composition" height="450px" />
+        </section>
+        <section>
+          <h2>Storybook</h2>
+          <a href="https://github.com/kadirahq/react-storybook">github.com/kadirahq/react-storybook</a>
+          <img src="img/storybook.gif" dynsrc="img/storybook.gif" alt="storybook" loop=infinite height="400px" />
+        </section>
+        <!-- <section>
           <h2>Bonnes pratiques</h2>
           <p>
             TODO
@@ -196,7 +204,7 @@ view model =
             <li>immutabilité -> optimisation du ré-rendu avec composants Pure</li>
             <li>story-book</li>
           </ul>
-        </section>
+        </section> -->
         <section>
           <h2>Model</h2>
           <p>
@@ -225,7 +233,7 @@ type alias Model =
         <section>
           <h2>Model</h2>
           <p>
-            En JS + Flow :
+            En Javascript + Flow :
           </p>
           <pre class="fragment"><code class="js">// Counter
 type Model = number;
@@ -244,9 +252,36 @@ type Model = {
             <li>Typage du javascript avec des annotations</li>
             <li>Détection des erreurs à la compilation</li>
             <li>Très bonne integration avec l'IDE Nuclide</li>
-            <li>ça reste du Javascipt au final</li>
+            <li>Ça reste du Javascipt au final</li>
             <li>Typage graduel</li>
           </ul>
+        </section>
+        <section>
+          <h2>Flow</h2>
+          <img src="img/flow.png" alt="flow" />
+        </section>
+        <section>
+          <h2>Nuclide</h2>
+          <img src="img/nuclide.gif" alt="nuclide" />
+        </section>
+        <section>
+          <h2>Update</h2>
+          <p>
+            En Elm :
+          </p>
+          <pre class="fragment"><code class="elm">type Msg = Increment | Decrement
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Increment -> model + 1
+    Decrement -> model - 1</code></pre>
+        </section>
+        <section>
+          <h2>Update</h2>
+          <p>
+            En Javascript :
+          </p>
         </section>
         <section>
           <h3>Update = (Action + Reducer)</h3>
@@ -261,17 +296,14 @@ type Model = {
           <i>TODO//
           Montrer les types sommes ;
           parler de l'écosystème Redux : montrer les logs ou Redux dev tools</i>
-
         </section>
         <section>
           <h3>Comment garantir l'immutabilité ?</h3>
-
           <ul>
             <li>Object.freeze(obj) ? (ne gère pas plusieurs niveaux) </li>
             <li>Immutable JS <a href="https://facebook.github.io/immutable-js/" target="_blank">proposé par Facebook</a></li>
             <li>Eslint avec <a href="https://github.com/jhusain/eslint-plugin-immutable" target="_blank">eslint-plugin-immutable</a></li>
           </ul>
-
         </section>
         <section>
           <h2>Composition</h2>
